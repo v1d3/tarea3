@@ -1,2 +1,3 @@
-#Yulissa Nayareth Sanhueza Escares
-#Cristobal Marcel Contreras Gajardo
+# Yulissa Nayareth Sanhueza Escares
+
+# Cristobal Marcel Contreras Gajardo
