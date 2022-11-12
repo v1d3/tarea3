@@ -16,6 +16,7 @@ import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 class Ventana extends JFrame {
     private PanelPrincipal dp;
     private PanelesPerifericos PP;
+    
     Ventana() {
         this.setLayout(new BorderLayout());
         dp = new PanelPrincipal();
@@ -23,9 +24,9 @@ class Ventana extends JFrame {
         dp.setLayout(null);
         
         PP.getBoton().ButtonGroup();
-        PP.getBoton().Rb1.setBounds(250, 650, 80, 80); //Fanta
-        PP.getBoton().Rb2.setBounds(170, 650, 80, 80); //Sprite
-        PP.getBoton().Rb3.setBounds(100, 650, 80, 80); //Coca
+        PP.getBoton().Rb1.setBounds(260, 650, 80, 50); //Fanta
+        PP.getBoton().Rb2.setBounds(190, 650, 70, 50); //Sprite
+        PP.getBoton().Rb3.setBounds(100, 650, 90, 50); //Coca
         
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);//activar cierre en la X 
         this.add(dp);
@@ -46,7 +47,11 @@ class PanelPrincipal extends JPanel {
     public void paint(Graphics g) {
         super.paint(g);
         g.setColor(Color.red);
-        g.fillRect(0, 0, 500, 800); //Rectangulo y dimensiones
+        g.fillRect(50, 50, 500, 650); //Rectangulo y dimensiones
+        g.setColor(Color.gray);
+        g.fillRect(80, 80, 440, 550); //Rectangulo y dimensiones
+        g.setColor(Color.black);
+        g.fillRect(380, 550, 170, 150); 
     }
 }
 
@@ -76,7 +81,7 @@ class Botones extends JButton {
     public Botones() {
         Rb1 = new JRadioButton("Fanta");
         Rb2 = new JRadioButton("Sprite");
-        Rb3 = new JRadioButton("Coca");
+        Rb3 = new JRadioButton("Coca Cola");
     }
 
     public void ButtonGroup() {
