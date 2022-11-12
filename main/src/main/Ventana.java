@@ -28,10 +28,7 @@ class Ventana extends JFrame {
 
         PP.getBoton().ActivateActionListener();
         PP.getBoton().ButtonGroup();    //Activa el boton comprame
-        PP.getBoton().R.setBounds(500, 400, 100, 50); //Boton de Compra
-        PP.getBoton().Rb1.setBounds(250, 650, 80, 50); //Fanta
-        PP.getBoton().Rb2.setBounds(170, 650, 80, 50); //Sprite
-        PP.getBoton().Rb3.setBounds(90, 650, 80, 50); //Coca
+        PP.addButtonsCoordinate();
 
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);//activar cierre en la X 
         this.add(dp);
@@ -57,7 +54,7 @@ class PanelPrincipal extends JPanel {
 
         g.setColor(Color.gray);
         g.fillRect(80, 80, 440, 550); //Rectangulo y dimensiones
-        g.setColor(Color.black);
+        g.setColor(Color.black);     //Rectangulo donde se situara el dinero
         g.fillRect(380, 550, 170, 150);
 
     }
@@ -80,6 +77,23 @@ class PanelesPerifericos extends JPanel {
         pp.add(getBoton().Rb2);
         pp.add(getBoton().Rb3);
         pp.add(getBoton().R);
+        
+        pp.add(getBoton().Jc1);
+        pp.add(getBoton().Jc2);
+        pp.add(getBoton().Jc3);
+        pp.add(getBoton().Jc4);
+    }
+
+    public void addButtonsCoordinate() {
+        getBoton().R.setBounds(500, 400, 100, 50); //Boton de Compra
+        getBoton().Rb1.setBounds(250, 650, 80, 50); //Fanta
+        getBoton().Rb2.setBounds(170, 650, 80, 50); //Sprite
+        getBoton().Rb3.setBounds(90, 650, 80, 50); //Coca
+
+        getBoton().Jc1.setBounds(600, 650, 80, 50); //100
+        getBoton().Jc2.setBounds(690, 650, 80, 50); //500
+        getBoton().Jc3.setBounds(780, 650, 80, 50); //1000
+        getBoton().Jc4.setBounds(870, 650, 80, 50); //1500
 
     }
 
@@ -92,7 +106,6 @@ class Botones extends JButton implements ActionListener {
     JRadioButton Rb3;
     JButton R;
     ButtonGroup Bg1;
-    ButtonGroup Bg2;
     JCheckBox Jc1;
     JCheckBox Jc2;
     JCheckBox Jc3;
@@ -106,21 +119,17 @@ class Botones extends JButton implements ActionListener {
         Rb3 = new JRadioButton("Coca");
         R = new JButton("Comprar");
         //Botones para el Dinero
-        Jc1 = new JCheckBox();
-        Jc2 = new JCheckBox();
-        Jc3 = new JCheckBox();
-        Jc4 = new JCheckBox();
+        Jc1 = new JCheckBox("100");
+        Jc2 = new JCheckBox("500");
+        Jc3 = new JCheckBox("1000");
+        Jc4 = new JCheckBox("1500");
     }
 
     public void ButtonGroup() { //Adicion de botones a grupo
         Bg1 = new ButtonGroup();
-        Bg2 = new ButtonGroup();
         Bg1.add(Rb1);
         Bg1.add(Rb2);
         Bg1.add(Rb3);
-        Bg2.add(Jc1);
-        Bg2.add(Jc2);
-        Bg2.add(Jc3);
     }
 
     public void ActivateActionListener() {  //Activar accion de listener del Boton Comprar
