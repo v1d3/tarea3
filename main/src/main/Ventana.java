@@ -24,6 +24,13 @@ class Ventana extends JFrame {
         dp = new PanelPrincipal();
         PP = new PanelesPerifericos();
         dp.setLayout(null);
+
+        
+        PP.getBoton().ButtonGroup();
+        PP.getBoton().Rb1.setBounds(260, 650, 80, 50); //Fanta
+        PP.getBoton().Rb2.setBounds(190, 650, 70, 50); //Sprite
+        PP.getBoton().Rb3.setBounds(100, 650, 90, 50); //Coca
+        
         PP.getBoton().ActivateActionListener();
         PP.getBoton().ButtonGroup();    //Activa el boton comprame
         PP.getBoton().R.setBounds(500, 400, 100, 50); //Boton de Compra
@@ -52,6 +59,12 @@ class PanelPrincipal extends JPanel {
         super.paint(g);
         g.setColor(Color.red);
         g.fillRect(50, 50, 500, 650); //Rectangulo y dimensiones
+
+        g.setColor(Color.gray);
+        g.fillRect(80, 80, 440, 550); //Rectangulo y dimensiones
+        g.setColor(Color.black);
+        g.fillRect(380, 550, 170, 150); 
+
     }
 }
 
@@ -89,8 +102,12 @@ class Botones extends JButton implements ActionListener {
     public Botones() {  //Creacion de botones (Instancias)
         Rb1 = new JRadioButton("Fanta");
         Rb2 = new JRadioButton("Sprite");
+
+        Rb3 = new JRadioButton("Coca Cola");
+
         Rb3 = new JRadioButton("Coca");
         R = new JButton("Tocame <3");
+
     }
 
     public void ButtonGroup() { //Adicion de botones a grupo
