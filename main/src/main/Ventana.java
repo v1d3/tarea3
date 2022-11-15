@@ -5,11 +5,15 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import java.awt.Color;
+
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
 import javax.swing.JCheckBox;
+
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 
@@ -28,7 +32,7 @@ class Ventana extends JFrame {
 
         PP.getBoton().ActivateActionListener();
         PP.getBoton().ButtonGroup();    //Activa el boton comprame
-        PP.getBoton().R.setBounds(500, 400, 100, 50); //Boton de Compra
+        PP.getBoton().R.setBounds(820, 110, 100, 50); //Boton de Compra
         PP.getBoton().Rb1.setBounds(250, 650, 80, 50); //Fanta
         PP.getBoton().Rb2.setBounds(170, 650, 80, 50); //Sprite
         PP.getBoton().Rb3.setBounds(90, 650, 80, 50); //Coca
@@ -54,11 +58,22 @@ class PanelPrincipal extends JPanel {
         super.paint(g);
         g.setColor(Color.red);
         g.fillRect(50, 50, 500, 650); //Rectangulo y dimensiones
-
         g.setColor(Color.gray);
         g.fillRect(80, 80, 440, 550); //Rectangulo y dimensiones
         g.setColor(Color.black);
         g.fillRect(380, 550, 170, 150);
+        g.setColor(Color.white);
+        g.fillRect(600, 30, 190, 200);
+
+        g.setColor(Color.black);
+        g.setFont(new Font("Cooper Black", Font.PLAIN, 18));
+        g.drawString("PRECIOS", 660, 50);
+        g.setFont(new Font("Serif", Font.BOLD, 14));
+        g.drawString("Coca Cola   $2000", 670, 100);
+        g.drawString("Sprite   $1500", 670, 150);
+        g.drawString("Fanta   $1000", 670, 200);
+        g.setFont(new Font("Lucida Fax", Font.BOLD, 18));
+        g.drawString("Forma de pago", 700, 270);
 
     }
 }
