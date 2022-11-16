@@ -1,11 +1,9 @@
-
 package main;
 
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import javax.swing.JPanel;
-
 
 class PanelPrincipal extends JPanel {
 
@@ -34,6 +32,17 @@ class PanelPrincipal extends JPanel {
         g.setFont(new Font("Lucida Fax", Font.BOLD, 18));
         g.drawString("Tipo de moneda de pago", 650, 270);
         g.drawString("Cantidad de monedas a pagar", 640, 390);
+    }
 
+}
+
+class PintarBebidas extends JPanel {
+    public static int  x = 50;
+    public static int  y = 50;
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g);
+        g.setColor(Color.BLACK);
+        
     }
 }
