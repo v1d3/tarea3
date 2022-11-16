@@ -66,7 +66,6 @@ class PanelPrincipal extends JPanel {
         g.fillRect(380, 550, 170, 150);
         g.setColor(Color.white);
         g.fillRect(600, 30, 190, 200);
-
         g.setColor(Color.black);
         g.setFont(new Font("Cooper Black", Font.PLAIN, 18));
         g.drawString("PRECIOS", 660, 60);
@@ -76,6 +75,9 @@ class PanelPrincipal extends JPanel {
         g.drawString("Fanta   $1000", 620, 200);
         g.setFont(new Font("Lucida Fax", Font.BOLD, 18));
         g.drawString("Forma de pago", 600, 270);
+        g.drawString("Tipo de moneda de pago", 650, 270);
+         g.drawString("Cantidad de monedas a pagar", 640, 390);
+ 
 
     }
 }
@@ -106,14 +108,21 @@ class PanelesPerifericos extends JPanel {
 
     public void addButtonsCoordinate() {
         getBoton().R.setBounds(450, 400, 100, 50); //Boton de Compra
+        getBoton().R.setBounds(820, 110, 100, 50); //Boton de Compra
         getBoton().Rb1.setBounds(250, 650, 80, 50); //Fanta
         getBoton().Rb2.setBounds(170, 650, 80, 50); //Sprite
         getBoton().Rb3.setBounds(90, 650, 80, 50); //Coca
+
 
         getBoton().Jc1.setBounds(600, 350, 80, 50); //100
         getBoton().Jc2.setBounds(690, 350, 80, 50); //500
         getBoton().Jc3.setBounds(780, 350, 80, 50); //1000
         getBoton().Jc4.setBounds(870, 350, 80, 50); //1500
+
+        getBoton().Jc1.setBounds(600, 300, 80, 50); //100
+        getBoton().Jc2.setBounds(690, 300, 80, 50); //500
+        getBoton().Jc3.setBounds(780, 300, 80, 50); //1000
+        getBoton().Jc4.setBounds(870, 300, 80, 50); //1500 
 
     }
 
