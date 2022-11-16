@@ -69,13 +69,13 @@ class PanelPrincipal extends JPanel {
 
         g.setColor(Color.black);
         g.setFont(new Font("Cooper Black", Font.PLAIN, 18));
-        g.drawString("PRECIOS", 660, 50);
+        g.drawString("PRECIOS", 660, 60);
         g.setFont(new Font("Serif", Font.BOLD, 14));
-        g.drawString("Coca Cola   $2000", 670, 100);
-        g.drawString("Sprite   $1500", 670, 150);
-        g.drawString("Fanta   $1000", 670, 200);
+        g.drawString("Coca Cola   $2000", 620, 100);
+        g.drawString("Sprite   $1500", 620, 150);
+        g.drawString("Fanta   $1000", 620, 200);
         g.setFont(new Font("Lucida Fax", Font.BOLD, 18));
-        g.drawString("Forma de pago", 700, 270);
+        g.drawString("Forma de pago", 600, 270);
 
     }
 }
@@ -105,15 +105,15 @@ class PanelesPerifericos extends JPanel {
     }
 
     public void addButtonsCoordinate() {
-        getBoton().R.setBounds(500, 400, 100, 50); //Boton de Compra
+        getBoton().R.setBounds(450, 400, 100, 50); //Boton de Compra
         getBoton().Rb1.setBounds(250, 650, 80, 50); //Fanta
         getBoton().Rb2.setBounds(170, 650, 80, 50); //Sprite
         getBoton().Rb3.setBounds(90, 650, 80, 50); //Coca
 
-        getBoton().Jc1.setBounds(600, 650, 80, 50); //100
-        getBoton().Jc2.setBounds(690, 650, 80, 50); //500
-        getBoton().Jc3.setBounds(780, 650, 80, 50); //1000
-        getBoton().Jc4.setBounds(870, 650, 80, 50); //1500
+        getBoton().Jc1.setBounds(600, 350, 80, 50); //100
+        getBoton().Jc2.setBounds(690, 350, 80, 50); //500
+        getBoton().Jc3.setBounds(780, 350, 80, 50); //1000
+        getBoton().Jc4.setBounds(870, 350, 80, 50); //1500
 
     }
 
@@ -160,11 +160,11 @@ class Botones extends JButton implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (Rb1.isSelected()) {
-            JOptionPane.showMessageDialog(this, "Asi que te gusta la PIJA eh?.");
+            JOptionPane.showMessageDialog(this, "haz seleccionado la CocaCola");
         } else if (Rb2.isSelected()) {
-            JOptionPane.showMessageDialog(this, "GEY?.");
+            JOptionPane.showMessageDialog(this, "Haz seleccionado la Sprite");
         } else if (Rb3.isSelected()) {
-            JOptionPane.showMessageDialog(this, "Te gusta la pija negra");
+            JOptionPane.showMessageDialog(this, "Haz seleccionado la Fanta");
         } else if (!(Rb1.isSelected() && Rb2.isSelected() && Rb3.isSelected())) {   //En caso de no haber elegido ningun tipo de Bebida
             JOptionPane.showMessageDialog(this, "No has seleccionado ninguna Bebida");
         }
