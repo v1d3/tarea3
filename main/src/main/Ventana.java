@@ -34,6 +34,7 @@ class Ventana extends JFrame {
         //JL.setIcon(new ImageIcon("C:\\Users\\ccris\\OneDrive\\Escritorio\\pictures-steam profile\\dispensador.jpg"));
         PP.getBoton().ActivateActionListener();
         PP.getBoton().ButtonGroup();    //Activa el boton comprame
+        
         PP.addButtonsCoordinate();      //Agrega coordenadas a los botones
         //JL.setBounds(150, 50, 1000, 650);
 

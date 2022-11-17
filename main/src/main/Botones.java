@@ -21,19 +21,21 @@ class Botones extends JButton implements ActionListener {
     JCheckBox Jc2;
     JCheckBox Jc3;
     JCheckBox Jc4;
+      
 
     public Botones() {  //Creacion de botones (Instancias)
         //Botones para La seleccion de Bebida
         Rb1 = new JRadioButton("Fanta");
         Rb2 = new JRadioButton("Sprite");
         Rb3 = new JRadioButton("Coca Cola");
-        Rb3 = new JRadioButton("Coca");
+       
         R = new JButton("Comprar");
         //Botones para el Dinero
         Jc1 = new JCheckBox("100");
         Jc2 = new JCheckBox("500");
         Jc3 = new JCheckBox("1000");
         Jc4 = new JCheckBox("1500");
+        
     }
 
     public void ButtonGroup() { //Adicion de botones a grupo
@@ -51,11 +53,11 @@ class Botones extends JButton implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (Rb1.isSelected()) {
-            JOptionPane.showMessageDialog(this, "haz seleccionado la CocaCola");
+            JOptionPane.showMessageDialog(this, "haz seleccionado la Fanta");
         } else if (Rb2.isSelected()) {
             JOptionPane.showMessageDialog(this, "Haz seleccionado la Sprite");
         } else if (Rb3.isSelected()) {
-            JOptionPane.showMessageDialog(this, "Haz seleccionado la Fanta");
+            JOptionPane.showMessageDialog(this, "Haz seleccionado la Coca Cola");
         } else if (!(Rb1.isSelected() && Rb2.isSelected() && Rb3.isSelected())) {   //En caso de no haber elegido ningun tipo de Bebida
             JOptionPane.showMessageDialog(this, "No has seleccionado ninguna Bebida");
         }
