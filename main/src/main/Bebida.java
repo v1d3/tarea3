@@ -3,7 +3,7 @@ package main;
 import java.awt.Color;
 import java.awt.Graphics;
 
-abstract class Bebida {
+public abstract class Bebida {
 
     private int serie;
     private int x, y;
@@ -19,12 +19,12 @@ abstract class Bebida {
 
     public abstract String beber();
 
-    public void setXY(int x, int y) {
+    public void setXY(int x, int y) {   //Poner coordenadas de Bebida
         this.x = x;
         this.y = y;
     }
 
-    public void paint(Graphics g) {
+    public void paint(Graphics g) { //Dibujar Bebidas
         g.setColor(colorBebida);
         g.fillRoundRect(x, y, 35, 58, 20, 20);
         g.setColor(colorSerie);
