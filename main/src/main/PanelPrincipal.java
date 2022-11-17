@@ -17,13 +17,16 @@ class PanelPrincipal extends JPanel {
     public void paint(Graphics g) {
         super.paint(g);
         g.setColor(Color.red);
-        g.fillRect(50, 50, 500, 650); //Rectangulo y dimensiones
+        g.fillRect(50, 50, 500, 660); //Rectangulo y dimensiones   ******************
         g.setColor(Color.gray);
         g.fillRect(80, 80, 440, 550); //Rectangulo y dimensiones
-        g.setColor(Color.LIGHT_GRAY);     //Rectangulo donde se situara el dinero
-        g.fillRect(380, 550, 170, 150);
+        g.setColor(Color.LIGHT_GRAY);     //Rectangulo donde se situara el dinero***********************
+        g.fillRect(620, 550, 300, 150);
         g.setColor(Color.white);
         g.fillRect(600, 30, 190, 215);
+        g.fillRect(620, 530, 300, 20);//**************++
+        
+        
         g.setColor(Color.black);
         g.setFont(new Font("Cooper Black", Font.PLAIN, 18));
         g.drawString("PRECIOS", 660, 60);
@@ -41,16 +44,15 @@ class PanelPrincipal extends JPanel {
         g.fillRoundRect(620,70 , 27, 48, 20, 20);
         g.setColor(Color.black);
         g.drawString("xxx", 621, 100);
-        
         g.setColor( Color.green);
         g.fillRoundRect(620, 130, 27, 48, 20, 20);
         g.setColor(Color.black);
         g.drawString("xxx", 621, 160);
-        
         g.setColor( Color.orange);
         g.fillRoundRect(620, 190, 27, 48, 20, 20);
         g.setColor(Color.black);
         g.drawString("xxx", 621, 220);
+         g.drawString("$$$$$  Deposito de Monedas  $$$$$", 650, 545); //************************+
         
 
     }
