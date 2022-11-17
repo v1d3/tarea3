@@ -23,12 +23,13 @@ abstract class Bebida {
         this.x = x;
         this.y = y;
     }
+
     public void paint(Graphics g) {
-          g.setColor(colorBebida);
-          g.fillRoundRect(x, y, 35, 58, 20, 20);
-          g.setColor(colorSerie);
-          String nserie = String.valueOf(serie);
-          g.drawString(nserie, x+4, y+13);
+        g.setColor(colorBebida);
+        g.fillRoundRect(x, y, 35, 58, 20, 20);
+        g.setColor(colorSerie);
+        String nserie = String.valueOf(serie);
+        g.drawString(nserie, x + 4, y + 13);
     }
 }
 
@@ -36,7 +37,7 @@ class CocaCola extends Bebida {
 
     public CocaCola(int serie) {
         super(serie);
-        
+
         colorBebida = Color.red;
         colorSerie = Color.white;
     }
@@ -44,10 +45,11 @@ class CocaCola extends Bebida {
     public String beber() {
         return "CocaCola";
     }
-    
+
 }
 
 class Sprite extends Bebida {
+
     public Sprite(int serie) {
         super(serie);
         colorBebida = Color.green;
