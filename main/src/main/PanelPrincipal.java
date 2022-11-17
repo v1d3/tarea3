@@ -9,9 +9,8 @@ class PanelPrincipal extends JPanel {
     private Expendedor exp;
     
     public PanelPrincipal() {
-        exp = new Expendedor(9);
+        exp = new Expendedor(48); //<------- Cantidad de Bebidas
         this.setBackground(Color.blue);
-
     }
 
     @Override

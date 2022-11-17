@@ -5,8 +5,8 @@ import java.util.ArrayList;
 
 public class Deposito {
 
-    private ArrayList<Bebida> Bebidas;
-    private int y;
+    public ArrayList<Bebida> Bebidas;
+    private int x;
     public Deposito() {
         Bebidas = new ArrayList();
     }
@@ -25,12 +25,12 @@ public class Deposito {
     }
 
     public void paint(Graphics g) {
-        int x = 100;
-        y = 100;
+        int y = 520;
+        x = 100;
         for (int i = 0; i < Bebidas.size(); i++) {   //For de cantidad de bebidas a pintar
             if ( i!=0 && i % 8 == 0) {
-                x = 100;
-                y =  y + 63;
+                y = 100;
+                x =  x - 63;
             }
             Bebidas.get(i).setXY(x, y);
             Bebidas.get(i).paint(g);
