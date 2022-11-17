@@ -14,12 +14,17 @@ class PanelPrincipal extends JPanel {
     @Override
     public void paint(Graphics g) {
         super.paint(g);
+
         g.setColor(Color.red);
         g.fillRect(50, 50, 500, 650); //Rectangulo y dimensiones
         g.setColor(Color.gray);
         g.fillRect(80, 80, 440, 550); //Rectangulo y dimensiones
-        g.setColor(Color.LIGHT_GRAY);     //Rectangulo donde se situara el dinero
+
+        g.setColor(Color.BLACK);
+        g.fillRect(90, 90, 420, 530);
+        g.setColor(Color.GRAY);     //Rectangulo donde se situara el dinero
         g.fillRect(380, 550, 170, 150);
+
         g.setColor(Color.white);
         g.fillRect(600, 30, 190, 200);
         g.setColor(Color.black);
@@ -37,12 +42,14 @@ class PanelPrincipal extends JPanel {
 }
 
 class PintarBebidas extends JPanel {
-    public static int  x = 50;
-    public static int  y = 50;
+
+    public static int x = 50;
+    public static int y = 50;
+
     @Override
     public void paint(Graphics g) {
         super.paint(g);
         g.setColor(Color.BLACK);
-        
+
     }
 }

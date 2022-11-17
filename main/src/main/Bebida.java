@@ -1,8 +1,8 @@
+package main;
 
 import java.awt.Color;
 import java.awt.Graphics;
 
-//package 
 abstract class Bebida {
 
     private int serie;
@@ -48,7 +48,6 @@ class CocaCola extends Bebida {
 }
 
 class Sprite extends Bebida {
-//public static final Color colorBebida = Color.green;
     public Sprite(int serie) {
         super(serie);
         colorBebida = Color.green;
