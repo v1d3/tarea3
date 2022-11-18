@@ -7,6 +7,7 @@ public class Deposito {
 
     public ArrayList<Bebida> Bebidas;
     private int x;
+    
     public Deposito() {
         Bebidas = new ArrayList();
     }

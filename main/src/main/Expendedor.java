@@ -11,10 +11,14 @@ public class Expendedor {
     private ArrayList<Moneda> DepositoMonedas; //Para generar el vuelto
     public int x;
     public int y;
+    public Moneda m;///////////////////////////////////////////
+    
+    
 
     public Expendedor(int numBebidas) {
         DepositoMonedas = new ArrayList();
         Dep = new Deposito();
+        m= new Moneda100();//////////////////////////////////////////////////
         for (int i = 0; i < numBebidas; i++) {
             if (i < 16) {
                 Dep.addBebida(new Fanta(100 + i));
@@ -24,11 +28,15 @@ public class Expendedor {
                 Dep.addBebida(new CocaCola(300 + i));
             }
         }
+        
+
+        
     }
 
     public void paintBebidastoExpendedor(Graphics g) {
         Dep.paint(g);
-        //System.out.println(Dep.Bebidas.size());
+        m.paint(g);///////////////////////////////////////////
+      
     }
 
     public void paint(Graphics g) {

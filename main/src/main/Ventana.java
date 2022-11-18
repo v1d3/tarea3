@@ -23,6 +23,7 @@ class Ventana extends JFrame {
         PP.addButtonsCoordinate();      //Agrega coordenadas a los botones
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);//activar cierre en la X 
         this.add(dp);
+       
         
         PP.addBotonestoPanel(dp);   //Añade los botones al panel Principal
         this.setSize(1250, 800); //Tamaño de la ventana
