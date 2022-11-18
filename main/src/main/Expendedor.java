@@ -2,36 +2,56 @@ package main;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import javax.swing.JButton;
 
 public class Expendedor {
 
     private Deposito Dep;
     private Deposito Moneda;
     private ArrayList<Moneda> DepositoMonedas; //Para generar el vuelto
-    public int x;
-    public int y;
+    public int x, y;
+    public boolean a = false;
+    public JButton j1;
 
     public Expendedor(int numBebidas) {
+        
+        j1 = new JButton("Rellenar"); j1.setBounds(400, 650, 80, 50);
+        
         DepositoMonedas = new ArrayList();
         Dep = new Deposito();
-        for(int i = 0; i < numBebidas; i ++){
-            if(i < 16){
+        for (int i = 0; i < numBebidas; i++) {
+            if (i < 16) {
                 Dep.addBebida(new Fanta(100 + i));
-            } else if ( i > 15 && i < 32) {
+            } else if (i > 15 && i < 32) {
                 Dep.addBebida(new Sprite(200 + i));
-            } else if ( i > 30) {
+            } else if (i > 30) {
                 Dep.addBebida(new CocaCola(300 + i));
             }
-        } 
+        }
     }
 
     public void paintBebidastoExpendedor(Graphics g) {
-        Dep.paint(g);
-        //System.out.println(Dep.Bebidas.size());
+            Dep.paint(g);
+    }
+
+    public void ComprarBebida() {
+        Dep.getBebida();
+    }
+
+    public void ActivateActionListener() {  //Activar accion de listener del Boton Comprar
+        j1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                a = true;
+                
+            }
+        });
     }
 
     public void paint(Graphics g) {
+        
         g.setColor(Color.red);
         g.fillRect(50, 50, 500, 660); //Rectangulo y dimensiones   ******************
         g.setColor(Color.gray);

@@ -6,19 +6,27 @@ import java.awt.Graphics;
 import javax.swing.JPanel;
 
 class PanelPrincipal extends JPanel {
-    private Expendedor exp;
+    public Expendedor exp;
+    private Comprador com;
+    private Botones bo;
     
     public PanelPrincipal() {
         exp = new Expendedor(48); //<------- Cantidad de Bebidas
+        com = new Comprador(exp);
         this.setBackground(Color.blue);
     }
-
+    
     @Override
     public void paint(Graphics g) {
         super.paint(g);
         
         exp.paint(g); //Expendedor
-        exp.paintBebidastoExpendedor(g); //Imprime Bebidas
+       
+        if(exp.a == true){
+            exp.paintBebidastoExpendedor(g);
+            repaint();
+        }
+        
         g.setColor(Color.white);
         g.fillRect(600, 30, 190, 215);
         g.fillRect(620, 530, 300, 20);//**************++
