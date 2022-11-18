@@ -17,6 +17,8 @@ class Botones extends JButton implements ActionListener {
     public ButtonGroup Bg1;
     public JCheckBox Jc1,Jc2,Jc3,Jc4;
     
+      
+
     public Botones() {  //Creacion de botones (Instancias)
         //Botones para La seleccion de Bebida
         Rb1 = new JRadioButton("Fanta");
