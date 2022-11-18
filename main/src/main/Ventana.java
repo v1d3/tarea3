@@ -25,7 +25,7 @@ class Ventana extends JFrame {
         this.add(dp);
         
         PP.addBotonestoPanel(dp);   //Añade los botones al panel Principal
-        this.setSize(1000, 800); //Tamaño de la ventana
+        this.setSize(1250, 800); //Tamaño de la ventana
         this.setVisible(true);  //para que se abra y sea visible 
         setLocationRelativeTo(null);
     }
