@@ -38,15 +38,15 @@ class PanelPrincipal extends JPanel {
         g.setColor(Color.red);
         g.fillRoundRect(620, 70, 27, 48, 20, 20);
         g.setColor(Color.black);
-        g.drawString("xxx", 621, 100);
+        g.drawString("xxx", 622, 85);
         g.setColor(Color.green);
         g.fillRoundRect(620, 130, 27, 48, 20, 20);
         g.setColor(Color.black);
-        g.drawString("xxx", 621, 160);
+        g.drawString("xxx", 622, 145);
         g.setColor(Color.orange);
         g.fillRoundRect(620, 190, 27, 48, 20, 20);
         g.setColor(Color.black);
-        g.drawString("xxx", 621, 220);
+        g.drawString("xxx", 622, 205);
         g.drawString("$$$$$  Deposito de Monedas  $$$$$", 650, 545); //************************+
 
     }

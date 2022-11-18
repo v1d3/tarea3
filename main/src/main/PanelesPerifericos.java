@@ -29,7 +29,7 @@ class PanelesPerifericos extends JPanel {
     }
 
     public void addButtonsCoordinate() {
-        getBoton().R.setBounds(820, 110, 100, 50); //Boton de Compra
+        getBoton().R.setBounds(820, 110, 130, 50); //Boton de Compra
         getBoton().Rb1.setBounds(340, 650, 80, 50); //Fanta ************
         getBoton().Rb2.setBounds(265, 650, 75, 50); //Sprite ***********
         getBoton().Rb3.setBounds(185, 650, 85, 50); //Coca ***************

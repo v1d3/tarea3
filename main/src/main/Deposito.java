@@ -25,16 +25,16 @@ public class Deposito {
     }
 
     public void paint(Graphics g) {
-        int y = 520;
+        int y = 535;
         x = 100;
         for (int i = 0; i < Bebidas.size(); i++) {   //For de cantidad de bebidas a pintar
             if ( i!=0 && i % 8 == 0) {
-                y = 100;
-                x =  x - 63;
+                y = 535;
+                x =  x + 60;
             }
             Bebidas.get(i).setXY(x, y);
             Bebidas.get(i).paint(g);
-            x +=50;
+            y -=60;
         }
     }
 }
