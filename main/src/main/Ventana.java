@@ -11,7 +11,7 @@ class Ventana extends JFrame {
     
     //private JLabel JL = new JLabel();
 
-    Ventana() {
+    public Ventana() {
         this.setLayout(new BorderLayout());
         dp = new PanelPrincipal();
         PP = new PanelesPerifericos();

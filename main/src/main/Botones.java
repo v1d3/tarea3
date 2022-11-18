@@ -12,17 +12,11 @@ import javax.swing.JRadioButton;
 
 class Botones extends JButton implements ActionListener {
 
-    JRadioButton Rb1;
-    JRadioButton Rb2;
-    JRadioButton Rb3;
-    JButton R;
-    ButtonGroup Bg1;
-    JCheckBox Jc1;
-    JCheckBox Jc2;
-    JCheckBox Jc3;
-    JCheckBox Jc4;
-      
-
+    public JRadioButton Rb1,Rb2,Rb3;
+    public JButton R;
+    public ButtonGroup Bg1;
+    public JCheckBox Jc1,Jc2,Jc3,Jc4;
+    
     public Botones() {  //Creacion de botones (Instancias)
         //Botones para La seleccion de Bebida
         Rb1 = new JRadioButton("Fanta");
