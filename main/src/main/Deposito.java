@@ -2,12 +2,12 @@ package main;
 
 import java.awt.Graphics;
 import java.util.ArrayList;
-import javax.swing.SwingUtilities;
 
 public class Deposito {
 
     public ArrayList<Bebida> Bebidas;
     private int x;
+    
     public Deposito() {
         Bebidas = new ArrayList();
     }
@@ -24,13 +24,13 @@ public class Deposito {
             return b;
         }
     }
-            
+
     public void paint(Graphics g) {
-        int y = 520;
-        x = 133;
-        for (int i = 0; i < Bebidas.size(); i++) {   //For de cantidad de bebidas a pintar y cuando cambiar de posicion
+        int y = 535;
+        x = 100;
+        for (int i = 0; i < Bebidas.size(); i++) {   //For de cantidad de bebidas a pintar
             if ( i!=0 && i % 8 == 0) {
-                y = 520;
+                y = 535;
                 x =  x + 60;
             }
             Bebidas.get(i).setXY(x, y);

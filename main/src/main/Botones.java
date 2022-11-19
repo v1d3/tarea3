@@ -11,12 +11,10 @@ import javax.swing.JRadioButton;
 
 class Botones extends JButton {
 
-    JRadioButton Rb1, Rb2, Rb3;
-    JButton R;
-    ButtonGroup Bg1;
-    JCheckBox Jc1, Jc2, Jc3, Jc4;
-    public boolean a = false;
-    public Expendedor ex;
+    public JRadioButton Rb1,Rb2,Rb3;
+    public JButton R;
+    public ButtonGroup Bg1;
+    public JCheckBox Jc1,Jc2,Jc3,Jc4;
 
     public Botones() {  //Creacion de botones (Instancias)
         //Botones para La seleccion de Bebida
@@ -24,8 +22,6 @@ class Botones extends JButton {
         Rb2 = new JRadioButton("Sprite");
         Rb3 = new JRadioButton("Coca Cola");
         R = new JButton("InsertarMoneda");
-       
-
         //Botones para el Dinero
         Jc1 = new JCheckBox("100");
         Jc2 = new JCheckBox("500");

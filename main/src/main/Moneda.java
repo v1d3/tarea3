@@ -1,36 +1,36 @@
 package main;
 
-import java.awt.Graphics;
 import java.awt.Color;
+import java.awt.Graphics;
 
 abstract class Moneda {
 
     private int x, y;
-    private int serie;
-    protected Color colorSerie;
-    
-    public abstract int getValor(); // la clase es abstracta por eso
+    public static final int tam = 22;
+    protected int numSerie;
+    protected Color colorMoneda;
 
     public Moneda() {
 
+    }
+
+    public void setXY(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 
     public Moneda getSerie() {
         return this;
     }
 
-    public void setXY(int x, int y) {   //Poner coordenadas de Monedas
-        this.x = x;
-        this.y = y;
-    }
+    public abstract int getValor(); // la clase es abstracta por eso
 
-    public void paint(Graphics g) { //Dibujar Bebidas
-        g.setColor(Color.YELLOW);
-        g.fillOval(x, y, 50, 50);
-        g.setColor(colorSerie);
-        colorSerie = Color.BLACK;
-        String nserie = String.valueOf(serie);
-        g.drawString(nserie, x + 4, y + 13);
+    public void paint(Graphics g) {
+        g.setColor(colorMoneda);
+        g.fillOval(x, y, tam, tam);
+        g.setColor(Color.black);
+        String serie = String.valueOf(numSerie);
+        g.drawString(serie, x + 1, y + 15);
     }
 }
 
@@ -38,6 +38,7 @@ class Moneda100 extends Moneda {
 
     public Moneda100() {
         super();
+        colorMoneda = Color.yellow;
     }
 
     public int getValor() {
@@ -48,7 +49,9 @@ class Moneda100 extends Moneda {
 class Moneda500 extends Moneda {
 
     public Moneda500() {
+
         super();
+        colorMoneda = Color.orange;
     }
 
     public int getValor() {
@@ -60,6 +63,7 @@ class Moneda1000 extends Moneda {
 
     public Moneda1000() {
         super();
+        colorMoneda = Color.pink;
     }
 
     public int getValor() {
@@ -71,6 +75,8 @@ class Moneda1500 extends Moneda {
 
     public Moneda1500() {
         super();
+        colorMoneda = Color.red;
+
     }
 
     public int getValor() {
