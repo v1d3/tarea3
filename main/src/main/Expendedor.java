@@ -50,6 +50,9 @@ public class Expendedor {
         }
 
     }
+    public void comprarBebida(Moneda mon){
+        
+    }
 
     public void paintBebidastoExpendedor(Graphics g) {
         Dep.paint(g);
