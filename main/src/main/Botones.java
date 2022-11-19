@@ -9,13 +9,13 @@ import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 
-class Botones extends JButton implements ActionListener {
+class Botones extends JButton {
 
     JRadioButton Rb1, Rb2, Rb3;
     JButton R;
     ButtonGroup Bg1;
     JCheckBox Jc1, Jc2, Jc3, Jc4;
-    public int a, b, c;
+    public boolean a = false;
     public Expendedor ex;
 
     public Botones() {  //Creacion de botones (Instancias)
@@ -24,6 +24,8 @@ class Botones extends JButton implements ActionListener {
         Rb2 = new JRadioButton("Sprite");
         Rb3 = new JRadioButton("Coca Cola");
         R = new JButton("InsertarMoneda");
+       
+
         //Botones para el Dinero
         Jc1 = new JCheckBox("100");
         Jc2 = new JCheckBox("500");
@@ -40,7 +42,8 @@ class Botones extends JButton implements ActionListener {
     }
 
     public void ActivateActionListener() {  //Activar accion de listener del Boton Comprar
-        R.addActionListener(this);
+        R.addActionListener(actionListener);
+        
     }
 //JOptionPane.    <----   es una funcion que habre cuadros de dialogo, usarlo en caso de dinero insuficiente o no marcar casillas
     public void addBotonestoPanel(PanelPrincipal pp) {
@@ -48,6 +51,7 @@ class Botones extends JButton implements ActionListener {
         pp.add(Rb2);
         pp.add(Rb3);
         pp.add(R);
+        
         
         pp.add(Jc1);
         pp.add(Jc2);
@@ -57,6 +61,7 @@ class Botones extends JButton implements ActionListener {
 
     public void addButtonsCoordinate() {
         R.setBounds(820, 110, 100, 50); //Boton de Compra
+       
         Rb1.setBounds(340, 650, 80, 50); //Fanta ************
         Rb2.setBounds(265, 650, 75, 50); //Sprite ***********
         Rb3.setBounds(185, 650, 85, 50); //Coca ***************
@@ -66,20 +71,5 @@ class Botones extends JButton implements ActionListener {
         Jc3.setBounds(780, 300, 80, 50); //1000
         Jc4.setBounds(870, 300, 80, 50); //1500 
 
-    }
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (Rb1.isSelected()) {
-            JOptionPane.showMessageDialog(this, "haz seleccionado la Fanta");
-            repaint();
-        } else if (Rb2.isSelected()) {
-            JOptionPane.showMessageDialog(this, "Haz seleccionado la Sprite");
-            repaint();
-        } else if (Rb3.isSelected()) {
-            JOptionPane.showMessageDialog(this, "Haz seleccionado la Coca Cola");
-        } else if (!(Rb1.isSelected() && Rb2.isSelected() && Rb3.isSelected())) {   //En caso de no haber elegido ningun tipo de Bebida
-            JOptionPane.showMessageDialog(this, "No has seleccionado ninguna Bebida");
-            repaint();
-        }
     }
 }

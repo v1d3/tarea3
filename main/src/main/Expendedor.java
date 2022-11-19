@@ -18,8 +18,6 @@ public class Expendedor {
 
     public Expendedor(int numBebidas) {
         
-        j1 = new JButton("Rellenar"); j1.setBounds(400, 650, 80, 50);
-        
         DepositoMonedas = new ArrayList();
         Dep = new Deposito();
         for (int i = 0; i < numBebidas; i++) {
@@ -39,15 +37,6 @@ public class Expendedor {
 
     public void ComprarBebida() {
         Dep.getBebida();
-    }
-
-    public void ActivateActionListener() {  //Activar accion de listener del Boton Comprar
-        j1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                a = true;
-                
-            }
-        });
     }
 
     public void paint(Graphics g) {
