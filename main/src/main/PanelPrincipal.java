@@ -54,10 +54,11 @@ class PanelPrincipal extends JPanel {
         g.setFont(new Font("Arial", Font.BOLD, 14));
         g.setColor(Color.white);
         g.drawString("$$$$$$$$$$  VUELTO  $$$$$$$$$$", 950, 545); // letra de vuelto
+        g.drawString("xxx", 622, 85);
         g.setColor(Color.black);
         g.drawString("$$$$$  Deposito de Monedas  $$$$$", 625, 545);
-        g.drawString("xxx", 622, 85); // numero de serie de bebidad de precios 
-        g.drawString("xxx", 622, 145);
+         
+        g.drawString("xxx", 622, 145);// numero de serie de bebidad de precios 
         g.drawString("xxx", 622, 205);
 
     }

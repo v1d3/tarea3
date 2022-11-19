@@ -29,7 +29,7 @@ abstract class Moneda {
         g.setColor(colorMoneda);
         g.fillOval(x, y, tam, tam);
         g.setColor(Color.black);
-        String serie = String.valueOf(numSerie);
+        String serie = String.valueOf(numSerie);////////////////////////////
         g.drawString(serie, x + 1, y + 15);
     }
 }

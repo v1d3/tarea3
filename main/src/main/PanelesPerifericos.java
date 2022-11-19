@@ -4,7 +4,7 @@ package main;
 import javax.swing.JPanel;
 
 
-class PanelesPerifericos extends JPanel {
+class PanelesPerifericos extends PanelPrincipal {
 
     public Botones bo;
 

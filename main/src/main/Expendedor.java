@@ -18,7 +18,7 @@ public class Expendedor {
     public Expendedor(int numBebidas) {
         DepositoMonedas = new ArrayList();
         Dep = new Deposito();
-        m= new Moneda100();//////////////////////////////////////////////////
+        m= new Moneda1000();//////////////////////////////////////////////////
         for (int i = 0; i < numBebidas; i++) {
             if (i < 16) {
                 Dep.addBebida(new Fanta(100 + i));
