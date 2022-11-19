@@ -3,69 +3,62 @@ package main;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.ButtonGroup;
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
-import javax.swing.JRadioButton;
 
-class Botones extends JButton {
 
-    public JRadioButton Rb1,Rb2,Rb3;
-    public JButton R;
-    public ButtonGroup Bg1;
-    public JCheckBox Jc1,Jc2,Jc3,Jc4;
+class Botones extends JButton implements ActionListener {
 
-    public Botones() {  //Creacion de botones (Instancias)
+    public JButton Rb1, Rb2, Rb3;
+    public JButton R, R1;
+    public JButton Jc1, Jc2, Jc3, Jc4;
+    public Expendedor ex;
+    public boolean a = false;
+    public boolean b = false;
+    public boolean c = false;
+    public boolean d = false;
+    public Botones(Expendedor ex) {  //Creacion de botones (Instancias)
+        
+        this.ex = ex;
         //Botones para La seleccion de Bebida
-        Rb1 = new JRadioButton("Fanta");
-        Rb2 = new JRadioButton("Sprite");
-        Rb3 = new JRadioButton("Coca Cola");
-        R = new JButton("InsertarMoneda");
+        Rb1 = new JButton("Fanta");
+        Rb2 = new JButton("Sprite");
+        Rb3 = new JButton("Coca Cola");
+        R = new JButton("Insertar Moneda");
+        R1 = new JButton("Rellenar");
         //Botones para el Dinero
-        Jc1 = new JCheckBox("100");
-        Jc2 = new JCheckBox("500");
-        Jc3 = new JCheckBox("1000");
-        Jc4 = new JCheckBox("1500");
-
-    }
-
-    public void ButtonGroup() { //Adicion de botones a grupo
-        Bg1 = new ButtonGroup();
-        Bg1.add(Rb1);
-        Bg1.add(Rb2);
-        Bg1.add(Rb3);
+        Jc1 = new JButton("100");
+        Jc2 = new JButton("500");
+        Jc3 = new JButton("1000");
+        Jc4 = new JButton("1500");
     }
 
     public void ActivateActionListener() {  //Activar accion de listener del Boton Comprar
-        R.addActionListener(actionListener);
-        
+        R.addActionListener(this);
+        R1.addActionListener(this);
+        Rb1.addActionListener(this);
+        Rb2.addActionListener(this);
+        Rb3.addActionListener(this);
+
     }
-//JOptionPane.    <----   es una funcion que habre cuadros de dialogo, usarlo en caso de dinero insuficiente o no marcar casillas
-    public void addBotonestoPanel(PanelPrincipal pp) {
-        pp.add(Rb1);
-        pp.add(Rb2);
-        pp.add(Rb3);
-        pp.add(R);
-        
-        
-        pp.add(Jc1);
-        pp.add(Jc2);
-        pp.add(Jc3);
-        pp.add(Jc4);
+//JOptionPane.       es una funcion que habre cuadros de dialogo, usarlo en caso de dinero insuficiente o no marcar casillas
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        JButton source = (JButton) e.getSource();
+        if (Rb1 == source) { //Elige Fanta
+            d = true;
+        } else if (Rb2 == source) { //Elige Sprite
+            c = true;
+        } else if (Rb3 == source) { //Elige CocaCola
+            b = true;
+        } else if (R1 == source) {   //Rellenar
+            a = true;
+        } 
     }
-
-    public void addButtonsCoordinate() {
-        R.setBounds(820, 110, 100, 50); //Boton de Compra
-       
-        Rb1.setBounds(340, 650, 80, 50); //Fanta ************
-        Rb2.setBounds(265, 650, 75, 50); //Sprite ***********
-        Rb3.setBounds(185, 650, 85, 50); //Coca ***************
-
-        Jc1.setBounds(600, 300, 80, 50); //100
-        Jc2.setBounds(690, 300, 80, 50); //500
-        Jc3.setBounds(780, 300, 80, 50); //1000
-        Jc4.setBounds(870, 300, 80, 50); //1500 
-
+    public void paint(Graphics g){
+        if(a == true ){
+            ex.paintBebidastoExpendedor(g);
+        }
     }
 }

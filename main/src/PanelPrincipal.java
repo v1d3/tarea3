@@ -3,17 +3,19 @@ package main;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.JPanel;
 
-class PanelPrincipal extends JPanel {
+class PanelPrincipal extends JPanel implements MouseListener {
     
     public Expendedor exp;
     private Comprador com;
     public Botones bo;
     public PanelPrincipal() {
-        
+        bo = new Botones();
         exp = new Expendedor(48); //<------- Cantidad de Bebidas
-       bo = new Botones(exp);
+       
         this.setBackground(Color.blue);
     }
 
@@ -22,8 +24,7 @@ class PanelPrincipal extends JPanel {
         super.paint(g);
 
         exp.paint(g); //Expendedor
-        exp.paintBebidastoExpendedor(g);
-        
+        exp.paintBebidastoExpendedor(g); //Imprime Bebidas
 
         g.setColor(Color.white);
 
@@ -75,8 +76,7 @@ class PanelPrincipal extends JPanel {
         pp.add(getBoton().Rb2);
         pp.add(getBoton().Rb3);
         pp.add(getBoton().R);
-        pp.add(getBoton().R1);
-        
+
         pp.add(getBoton().Jc1);
         pp.add(getBoton().Jc2);
         pp.add(getBoton().Jc3);
@@ -85,7 +85,6 @@ class PanelPrincipal extends JPanel {
 
     public void addButtonsCoordinate() {
         getBoton().R.setBounds(820, 110, 130, 50); //Boton de Compra
-        getBoton().R1.setBounds(420, 650, 130, 50);
         getBoton().Rb1.setBounds(340, 650, 80, 50); //Fanta ************
         getBoton().Rb2.setBounds(265, 650, 75, 50); //Sprite ***********
         getBoton().Rb3.setBounds(180, 650, 85, 50); //Coca ***************
@@ -95,6 +94,30 @@ class PanelPrincipal extends JPanel {
         getBoton().Jc3.setBounds(780, 300, 80, 50); //1000
         getBoton().Jc4.setBounds(870, 300, 80, 50); //1500 
 
+    }
+
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+       
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
     }
 
 }
