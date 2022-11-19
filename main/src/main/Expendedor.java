@@ -12,12 +12,15 @@ public class Expendedor {
     public int x;
     public int y;
     public Moneda m;///////////////////////////////////////////
+
     
     
 
     public Expendedor(int numBebidas) {
+        
         DepositoMonedas = new ArrayList();
         Dep = new Deposito();
+        
         m= new Moneda1000();//////////////////////////////////////////////////
         for (int i = 0; i < numBebidas; i++) {
             if (i < 16) {
@@ -28,27 +31,28 @@ public class Expendedor {
                 Dep.addBebida(new CocaCola(300 + i));
             }
         }
-        
-
-        
     }
 
     public void paintBebidastoExpendedor(Graphics g) {
         Dep.paint(g);
-        m.paint(g);///////////////////////////////////////////
+        m.paint(g);
       
     }
+        
 
+    
     public void paint(Graphics g) {
 
         g.setColor(Color.red);
-        g.fillRect(50, 50, 500, 660); //Rectangulo y dimensiones 
+        g.fillRect(50, 50, 500, 600); //Rectangulo y dimensiones 
 
         g.setColor(Color.gray);
         g.fillRect(80, 80, 440, 550); //Rectangulo y dimensiones
 
         g.setColor(Color.BLACK);
         g.fillRect(90, 90, 420, 530);
+        g.fillRect(50, 650, 130, 50);
+        g.fillRect(420, 650, 130, 50);
         
         
         g.setColor(Color.LIGHT_GRAY);     //Rectangulo donde se situara el dinero

@@ -1,4 +1,3 @@
-
 package main;
 
 import java.awt.event.ActionEvent;
@@ -9,49 +8,42 @@ import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 
-
 class Botones extends JButton implements ActionListener {
 
-    public JRadioButton Rb1,Rb2,Rb3;
+    public JButton Rb1, Rb2, Rb3;
     public JButton R;
-    public ButtonGroup Bg1;
-    public JCheckBox Jc1,Jc2,Jc3,Jc4;
-    
-      
+    public JButton Jc1, Jc2, Jc3, Jc4;
 
     public Botones() {  //Creacion de botones (Instancias)
         //Botones para La seleccion de Bebida
-        Rb1 = new JRadioButton("Fanta");
-        Rb2 = new JRadioButton("Sprite");
-        Rb3 = new JRadioButton("Coca Cola");
+        Rb1 = new JButton("Fanta");
+        Rb2 = new JButton("Sprite");
+        Rb3 = new JButton("Coca Cola");
         R = new JButton("Insertar Moneda");
         //Botones para el Dinero
-        Jc1 = new JCheckBox("100");
-        Jc2 = new JCheckBox("500");
-        Jc3 = new JCheckBox("1000");
-        Jc4 = new JCheckBox("1500");
-        
-    }
-
-    public void ButtonGroup() { //Adicion de botones a grupo
-        Bg1 = new ButtonGroup();
-        Bg1.add(Rb1);
-        Bg1.add(Rb2);
-        Bg1.add(Rb3);
+        Jc1 = new JButton("100");
+        Jc2 = new JButton("500");
+        Jc3 = new JButton("1000");
+        Jc4 = new JButton("1500");
     }
 
     public void ActivateActionListener() {  //Activar accion de listener del Boton Comprar
         R.addActionListener(this);
+        Rb1.addActionListener(this);
+        Rb2.addActionListener(this);
+        Rb3.addActionListener(this);
+
     }
 //JOptionPane.       es una funcion que habre cuadros de dialogo, usarlo en caso de dinero insuficiente o no marcar casillas
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (Rb1.isSelected()) {
+        JButton source = (JButton) e.getSource();
+        if (Rb1 == source) {
             JOptionPane.showMessageDialog(this, "haz seleccionado la Fanta");
-        } else if (Rb2.isSelected()) {
+        } else if (Rb2 == source) {
             JOptionPane.showMessageDialog(this, "Haz seleccionado la Sprite");
-        } else if (Rb3.isSelected()) {
+        } else if (Rb3 == source) {
             JOptionPane.showMessageDialog(this, "Haz seleccionado la Coca Cola");
         } else if (!(Rb1.isSelected() && Rb2.isSelected() && Rb3.isSelected())) {   //En caso de no haber elegido ningun tipo de Bebida
             JOptionPane.showMessageDialog(this, "No has seleccionado ninguna Bebida");
