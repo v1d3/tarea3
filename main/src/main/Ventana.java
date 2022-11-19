@@ -14,7 +14,10 @@ class Ventana extends JFrame {
     public Ventana() {
         this.setLayout(new BorderLayout());
         dp = new PanelPrincipal();
+<<<<<<< HEAD
         this.add(dp);
+=======
+>>>>>>> a34d74c4ac2be0c661dc906782fe2655958c0e33
         dp.getBoton().ActivateActionListener();////////////////////////////////777
         dp.setLayout(null);
         dp.addButtonsCoordinate();

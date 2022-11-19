@@ -3,17 +3,21 @@ package main;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.JPanel;
 
 class PanelPrincipal extends JPanel {
+
     
     public Expendedor exp;
     private Comprador com;
     public Botones bo;
+    
     public PanelPrincipal() {
         
         exp = new Expendedor(48); //<------- Cantidad de Bebidas
-       bo = new Botones(exp);
+        bo = new Botones(exp);
         this.setBackground(Color.blue);
     }
 

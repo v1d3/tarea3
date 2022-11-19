@@ -26,6 +26,7 @@ class Botones extends JButton implements ActionListener {
         Rb3 = new JButton("Coca Cola");
         R = new JButton("Insertar Moneda");
         R1 = new JButton("Rellenar");
+
         //Botones para el Dinero
         Jc1 = new JButton("100");
         Jc2 = new JButton("500");

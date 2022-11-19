@@ -38,6 +38,7 @@ public class Expendedor {
                 dm.addMoneda(m2);
             }
         }
+
     }
 
     public void paintBebidastoExpendedor(Graphics g) {
@@ -49,7 +50,9 @@ public class Expendedor {
     public void ComprarBebida() {
 
     }
+        
 
+    
     public void paint(Graphics g) {
 
         g.setColor(Color.red);
@@ -61,6 +64,9 @@ public class Expendedor {
         g.setColor(Color.BLACK);
         g.fillRect(90, 90, 420, 530);
 
+        g.fillRect(50, 650, 130, 50);
+        g.fillRect(420, 650, 130, 50);
+        
         g.setColor(Color.LIGHT_GRAY);     //Rectangulo donde se situara el dinero
         g.fillRect(600, 550, 300, 150);
 
