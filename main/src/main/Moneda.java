@@ -5,13 +5,16 @@ import java.awt.Graphics;
 
 abstract class Moneda {
 
-    private int x, y;
+    private int serie,x,y;
     public static final int tam = 22;
     protected int numSerie;
     protected Color colorMoneda;
 
-    public Moneda() {
-
+    public Moneda(int serie){
+        this.serie=serie;
+        this.x=x;
+        this.y=y;
+               
     }
 
     public void setXY(int x, int y) {
@@ -36,8 +39,8 @@ abstract class Moneda {
 
 class Moneda100 extends Moneda {
 
-    public Moneda100() {
-        super();
+    public Moneda100(int serie) {
+        super(serie);
         colorMoneda = Color.yellow;
     }
 
@@ -48,9 +51,9 @@ class Moneda100 extends Moneda {
 
 class Moneda500 extends Moneda {
 
-    public Moneda500() {
+    public Moneda500(int serie) {
 
-        super();
+        super(serie);
         colorMoneda = Color.orange;
     }
 
@@ -61,8 +64,8 @@ class Moneda500 extends Moneda {
 
 class Moneda1000 extends Moneda {
 
-    public Moneda1000() {
-        super();
+    public Moneda1000(int serie) {
+        super(serie);
         colorMoneda = Color.pink;
     }
 
@@ -73,8 +76,8 @@ class Moneda1000 extends Moneda {
 
 class Moneda1500 extends Moneda {
 
-    public Moneda1500() {
-        super();
+    public Moneda1500(int serie) {
+        super(serie);
         colorMoneda = Color.red;
 
     }

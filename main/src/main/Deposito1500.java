@@ -5,38 +5,37 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 
-
-public class DepMonedas {
+class Deposito1500{
     private ArrayList<Moneda> al;
     private Moneda m;
-    private int x, y;
+    private int x,y;
     
-    public DepMonedas(int x, int y){
-        this.x = x; this.y = y;
+    public Deposito1500(int x,int y){
+        this.x = x + 610;
+        this.y = y + 650;
         al = new ArrayList<Moneda>();
+    
     }
     
     public void paint(Graphics g){
-        y = 470 - y;
-        for(int i=0; i<al.size(); i++){
-            if( i%10 == 0){
-                x =580 +x;
-                y = y - 20;
-            }
-            al.get(i).setXY(x, y);
+        for(int i=al.size()-1;i>=0;i--){
             Moneda aux = al.get(i);
             aux.paint(g);
-            x = x + 10;
+            
         }
     }
     public void addMoneda(Moneda m){
         if(m!=null){
-            al.add(m);
+             al.add(m);     
+        }
+        for (int i = 0; i < al.size(); i++) {
+            Moneda aux = al.get(i);
+            aux.setXY(x+23*i, y);
         }
     }
- 
     public Moneda getMoneda(){
         Moneda moneda;
+   
         if(al.size() > 0){
             moneda = al.remove(0);
             return moneda;
@@ -44,4 +43,5 @@ public class DepMonedas {
         else
             return null;  
     }
+    
 }

@@ -6,18 +6,17 @@ import javax.swing.JFrame;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 class Ventana extends JFrame {
-    private Container t;
+    private Container cont;
     private PanelPrincipal dp;
     public Expendedor e;
 
     //private JLabel JL = new JLabel();
     public Ventana() {
+        cont = getContentPane();
         this.setLayout(new BorderLayout());
         dp = new PanelPrincipal();
-<<<<<<< HEAD
+
         this.add(dp);
-=======
->>>>>>> a34d74c4ac2be0c661dc906782fe2655958c0e33
         dp.getBoton().ActivateActionListener();////////////////////////////////777
         dp.setLayout(null);
         dp.addButtonsCoordinate();
@@ -29,7 +28,7 @@ class Ventana extends JFrame {
         dp.addBotonestoPanel(dp);
         //Añade los botones al panel Principal
         this.setSize(1250, 800); //Tamaño de la ventana
-        
+        cont.add(dp);
         this.setVisible(true);  //para que se abra y sea visible 
         setLocationRelativeTo(null);
     }

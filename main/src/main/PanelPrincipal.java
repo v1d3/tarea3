@@ -13,10 +13,10 @@ class PanelPrincipal extends JPanel {
     public Expendedor exp;
     private Comprador com;
     public Botones bo;
-    
+    public boolean aux;
     public PanelPrincipal() {
         
-        exp = new Expendedor(48); //<------- Cantidad de Bebidas
+        exp = new Expendedor(48, 50, 50); //<------- Cantidad de Bebidas
         bo = new Botones(exp);
         this.setBackground(Color.blue);
     }
@@ -26,7 +26,12 @@ class PanelPrincipal extends JPanel {
         super.paint(g);
 
         exp.paint(g); //Expendedor
-        exp.paintBebidastoExpendedor(g);
+        if(bo.a == true ){
+            exp.paintBebidastoExpendedor(g);
+            this.updateUI();
+            this.repaint();
+            aux = true;
+        }
         
 
         g.setColor(Color.white);

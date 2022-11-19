@@ -7,19 +7,22 @@ import java.util.ArrayList;
 public class Expendedor {
 
     private Deposito Dep;
-    private DepMonedas dm;
     public int x;
     public int y;
-    public Moneda m, m1, m2;///////////////////////////////////////////
+    private Deposito100 m100;
+    private Deposito500 m500;
+    private Deposito1000 m1000;
+    private Deposito1500 m1500;
     private Botones bo;
 
-    public Expendedor(int numBebidas) {
-
-        dm = new DepMonedas();
+    public Expendedor(int numBebidas, int x, int y) {
+        
         Dep = new Deposito();
-        m = new Moneda1000();//////////////////////////////////////////////////
-        m1 = new Moneda1500();
-        m2 = new Moneda500();
+        m100 = new Deposito100(this.x, this.y);
+        m500 = new Deposito500(this.x, this.y);
+        m1000 = new Deposito1000(this.x, this.y);
+        m1500 = new Deposito1500(this.x, this.y);
+        //Añadir Bebidas inicialmente
         for (int i = 0; i < numBebidas; i++) {
             if (i < 16) {
                 Dep.addBebida(new Fanta(100 + i));
@@ -29,30 +32,39 @@ public class Expendedor {
                 Dep.addBebida(new CocaCola(300 + i));
             }
         }
-        for (int i = 0; i < 40; i++) {
-            if (i < 16) {
-                dm.addMoneda(m);
-            } else if (i > 15 && i < 32) {
-                dm.addMoneda(m1);
-            } else if( i > 30) {
-                dm.addMoneda(m2);
-            }
+        //Añadir Monedas
+        for (int i = 0; i < 12; i++) {
+            Moneda m = new Moneda100(100 + i);
+            m100.addMoneda(m);
+        }
+        for (int i = 0; i < 12; i++) {
+            Moneda m = new Moneda500(500 + i);
+            m500.addMoneda(m);
+        }
+        for (int i = 0; i < 12; i++) {
+            Moneda m = new Moneda1000(1000 + i);
+            m1000.addMoneda(m);
+        }
+        for (int i = 0; i < 12; i++) {
+            Moneda m = new Moneda1500(1500 + i);
+            m1500.addMoneda(m);
         }
 
     }
 
     public void paintBebidastoExpendedor(Graphics g) {
         Dep.paint(g);
-        dm.paint(g);
+        m100.paint(g);
+        m500.paint(g);
+        m1000.paint(g);
+        m1500.paint(g);
 
     }
 
     public void ComprarBebida() {
 
     }
-        
 
-    
     public void paint(Graphics g) {
 
         g.setColor(Color.red);
@@ -65,8 +77,7 @@ public class Expendedor {
         g.fillRect(90, 90, 420, 530);
 
         g.fillRect(50, 650, 130, 50);
-        g.fillRect(420, 650, 130, 50);
-        
+
         g.setColor(Color.LIGHT_GRAY);     //Rectangulo donde se situara el dinero
         g.fillRect(600, 550, 300, 150);
 

@@ -47,9 +47,9 @@ class Botones extends JButton implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton source = (JButton) e.getSource();
-        if (Rb1 == source) { //Elige Fanta
+        if (e.getSource() == Rb1) { //Elige Fanta
             d = true;
-        } else if (Rb2 == source) { //Elige Sprite
+        } else if (e.getSource() == Rb2 ) { //Elige Sprite
             c = true;
         } else if (Rb3 == source) { //Elige CocaCola
             b = true;
@@ -58,7 +58,7 @@ class Botones extends JButton implements ActionListener {
         } 
     }
     public void paint(Graphics g){
-        if(a == true ){
+        if(c == true ){
             ex.paintBebidastoExpendedor(g);
         }
     }
