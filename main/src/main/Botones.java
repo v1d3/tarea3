@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
-
 class Botones extends JButton implements ActionListener {
 
     public JButton Rb1, Rb2, Rb3;
@@ -17,8 +16,9 @@ class Botones extends JButton implements ActionListener {
     public boolean b = false;
     public boolean c = false;
     public boolean d = false;
+
     public Botones(Expendedor ex) {  //Creacion de botones (Instancias)
-        
+
         this.ex = ex;
         //Botones para La seleccion de Bebida
         Rb1 = new JButton("Fanta");
@@ -40,25 +40,48 @@ class Botones extends JButton implements ActionListener {
         Rb1.addActionListener(this);
         Rb2.addActionListener(this);
         Rb3.addActionListener(this);
+        Jc1.addActionListener(this);
+        Jc2.addActionListener(this);
+        Jc3.addActionListener(this);
+        Jc4.addActionListener(this);
 
     }
 //JOptionPane.       es una funcion que habre cuadros de dialogo, usarlo en caso de dinero insuficiente o no marcar casillas
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        JButton source = (JButton) e.getSource();
         if (e.getSource() == Rb1) { //Elige Fanta
             d = true;
-        } else if (e.getSource() == Rb2 ) { //Elige Sprite
+        }
+        if (e.getSource() == Rb2) { //Elige Sprite
             c = true;
-        } else if (Rb3 == source) { //Elige CocaCola
+        }
+        if (e.getSource() == Rb3) { //Elige CocaCola
             b = true;
-        } else if (R1 == source) {   //Rellenar
+        }
+        if (e.getSource() == R1) {   //Rellenar
             a = true;
-        } 
+            System.out.println("rellenar");
+        }
+        if (e.getSource() == R) {   //insertar
+            System.out.println("insertar moneda");
+        }
+        if (e.getSource() == Jc1) {
+            System.out.println("100");
+        }
+        if (e.getSource() == Jc2) {
+            System.out.println("500");
+        }
+        if (e.getSource() == Jc3) {
+            System.out.println("1000");
+        }
+        if (e.getSource() == Jc4) {
+            System.out.println("1500");
+        }
     }
-    public void paint(Graphics g){
-        if(c == true ){
+
+    public void paint(Graphics g) {
+        if (c == true) {
             ex.paintBebidastoExpendedor(g);
         }
     }
