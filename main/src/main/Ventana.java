@@ -12,7 +12,7 @@ class Ventana extends JFrame {
 
     //private JLabel JL = new JLabel();
     public Ventana() {
-        cont = getContentPane();
+     
         this.setLayout(new BorderLayout());
         dp = new PanelPrincipal();
 
@@ -26,9 +26,10 @@ class Ventana extends JFrame {
         this.add(dp);
 
         dp.addBotonestoPanel(dp);
+        
         //Añade los botones al panel Principal
         this.setSize(1250, 800); //Tamaño de la ventana
-        cont.add(dp);
+  
         this.setVisible(true);  //para que se abra y sea visible 
         setLocationRelativeTo(null);
     }

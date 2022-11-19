@@ -13,7 +13,6 @@ public class Expendedor {
     private Deposito500 m500;
     private Deposito1000 m1000;
     private Deposito1500 m1500;
-    private Botones bo;
 
     public Expendedor(int numBebidas, int x, int y) {
         

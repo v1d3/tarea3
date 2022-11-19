@@ -9,13 +9,13 @@ import javax.swing.JPanel;
 
 class PanelPrincipal extends JPanel {
 
-    
     public Expendedor exp;
     private Comprador com;
     public Botones bo;
     public boolean aux;
+
     public PanelPrincipal() {
-        
+
         exp = new Expendedor(48, 50, 50); //<------- Cantidad de Bebidas
         bo = new Botones(exp);
         this.setBackground(Color.blue);
@@ -26,13 +26,13 @@ class PanelPrincipal extends JPanel {
         super.paint(g);
 
         exp.paint(g); //Expendedor
-        if(bo.a == true ){
+        if (bo.a == true) {
             exp.paintBebidastoExpendedor(g);
             this.updateUI();
             this.repaint();
+            
             aux = true;
         }
-        
 
         g.setColor(Color.white);
 
@@ -70,11 +70,12 @@ class PanelPrincipal extends JPanel {
         g.drawString("xxx", 622, 85);
         g.setColor(Color.black);
         g.drawString("$$$$$  Deposito de Monedas  $$$$$", 625, 545);
-         
+
         g.drawString("xxx", 622, 145);// numero de serie de bebidad de precios 
         g.drawString("xxx", 622, 205);
 
     }
+
     public Botones getBoton() {
         return bo;
     }
@@ -85,7 +86,7 @@ class PanelPrincipal extends JPanel {
         pp.add(getBoton().Rb3);
         pp.add(getBoton().R);
         pp.add(getBoton().R1);
-        
+
         pp.add(getBoton().Jc1);
         pp.add(getBoton().Jc2);
         pp.add(getBoton().Jc3);
